@@ -26,7 +26,7 @@ Often times the 'Before you Begin' steps seems to be the longest part of the jou
 ``` powershell
 # Get header setup to connect and make requests.  This leverages credential assets already in Azure
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType] 'Tls12'
-$cred = Get-AutomationPSCredential -Name 'ISV_demo'
+$cred = Get-AutomationPSCredential -Name 'Skytap_cred'
 $content = 'application/json'
 $baseAuth = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f $cred.UserName, $cred.GetNetworkCredential().Password)))
 $header =  @{"Accept" = $content; Authorization=("Basic {0}" -f $baseAuth); "Content_type" = $content}
