@@ -143,6 +143,4 @@ if($null -ne $template_copy.id){
 }
 ```
 
-# create resource group
-az group create --location=$REGION --resource-group=$RGNAME
 
